@@ -1,0 +1,869 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+	<!-- 메인상단 하단 -->
+    <!-- Bootstrap core CSS -->
+    <link href="../lib/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="../lib/css/logo-nav.css" rel="stylesheet">
+	
+	<!-- 메인 CSS -->
+	<link href="../lib/css/common.css" rel="stylesheet">
+	
+	<!-- SideBar CSS -->
+	<link href="../lib/css/simple-sidebar.css" rel="stylesheet">
+	
+	<!-- half-slider CSS -->
+	<link href="../lib/css/half-slider.css" rel="stylesheet">
+
+
+
+
+<!-- --------------------------------------------------------------------------------------------인기도서시작! -->
+<!-- Bootstrap core CSS-->
+    <!--  <link href="../lib/css_popularBook/bootstrap.min.css" rel="stylesheet"> -->  
+
+   <!--  Custom fonts for this template-->
+      <link href="../lib/css_popularBook/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"> 
+
+  <!--   Custom styles for this template -->
+      <link href="../lib/css_popularBook/sb-admin-2.min.css" rel="stylesheet">  -
+
+	 <link rel="stylesheet" type="text/css" href="../lib/css_popularBook/jquery-ui.min.css">   
+	
+	
+
+<style type="text/css">
+.gab20 {
+	margin: 20px;
+}
+
+#wrap {
+	width: 1000px;
+	height: auto;
+	margin: auto;
+	margin-top: 20px;
+	margin-botton: 20px;
+}
+#tab{
+	background-color: white;
+	
+}
+.book_icon{
+	display: inline-block;
+	
+}
+.book_icon>i{
+	font-size : 25px;
+	
+}
+.col{
+	width : 150px;
+
+}
+#t1,#t2,#t3 {
+	margin: 0;
+	padding: 0;
+}
+
+
+#tabImg {
+	/*border: 2px solid red;*/
+	margin: 20px;
+	padding: 0;
+}
+
+.bookListSize {
+	margin: 0; padding 0;
+	margin-left: 10px;
+	/*border: 1px solid red;*/
+}
+
+.bookList {
+	width: 165px;
+	height: 230px;
+	list-style: none;
+	float: left;
+	margin: 30px 30px 0 20px;
+	
+}
+label{
+	border-bottom: 2px solid #6B9900;
+	width :25px;
+	text-align: center;
+	
+}
+
+.imageSize {
+	width: 165px;
+	height: 190px;
+}
+
+.imageStyle>span {
+	text-decoration: none;
+	font-size: 12px;
+}
+
+.end {
+	float: none;
+	clear: both;
+	list-style: none;
+}
+
+.fontStyle {
+	text-align: center;
+	display: block;
+	margin-top: 5px;
+	
+	
+}
+
+.size {
+	text-align: center;
+}
+.tab_color{
+	border : none;
+	background-color: white;
+	border-radius:0px;
+	/*border-bottom: 1px solid #337ab7;*/
+	border-width: 20px 
+}
+.tab_color a{ /*탭키를 눌렀을 때 a 태그*/
+	
+	margin : 0;
+	width: 100%;
+	text-align: center;
+	outline: none;
+	border :  #aaa;
+	
+}
+.tab_color a:hover{
+	
+}
+.t_selected{ /*탭키를 눌렀을 때 색*/
+	color : #6B9900;
+	font-weight: bold;
+}
+
+.taba_color{
+	
+	font-weight: bold;
+	width : 100%;
+	text-align: center;
+}
+	
+.taba_color:hover{
+	width: 100%;
+	
+}	
+.taba_color:active{
+	color: 
+}
+	
+
+
+#write{
+	display: inline-block;
+	font-size: 25px;
+	font-weight: bold;
+}
+#tab i{
+	width: 20px;
+	height : 30px;
+}
+.region_div{
+	
+	margin: auto;
+	padding: 0;
+	/*background-color: #E5DACE;*/
+	height: 30px;
+	
+}
+
+#menu{
+
+	margin-top: 30px;
+	margin-left: 70px; 
+	padding : 0;
+	width : 100%;
+	list-style: none;
+	
+		
+}
+.region{
+	margin : 0;
+	padding: 0;
+	width : 90px;
+	height : 30px;
+	float : left;
+	border-top : #EAEAEA 1px solid;
+	border-bottom: #EAEAEA 1px solid;
+	
+}
+.region_a{
+	display: inline-block;
+	margin : 0;
+	padding : 0;
+	width: 100%;
+	height : 100%;
+	color :	#747474;
+	line-height : 30px;
+	text-align: center;
+	font-weight: bold;	
+	font-family: inherit;
+	font-size: 16px;
+}
+
+.region_a:hover{
+	color : #6B9900;
+	text-decoration: none;
+	border-bottom: 2px solid #6B9900;
+
+}
+.selected{
+	border-bottom: 2px solid #6B9900;
+}
+
+.paginate_button{
+	font-family: inherit;
+	font-size: 15px;
+	font-weight: bold;
+	margin-left: 10px;
+}
+.paginate_button:hover{
+	border-bottom: #6B9900;
+	
+}
+
+.page_style:hover{
+	
+	border-bottom: 2px solid #6B9900;
+	text-decoration: none;
+}
+
+
+</style>
+</head>
+<body style="margin : 0; padding: 0;">
+
+   <!-- 메뉴 상단!! -->
+   
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top"  >
+      <div class="container" >
+        <a class="navbar-brand" href="Main.html">
+          <!-- <img src="http://placehold.it/300x60?text=Logo" width="150" height="30" alt=""> -->
+        	<h2 id="header_logo">우리 동네 도서관</h2>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" 
+        data-target="#navbarResponsive" aria-controls="navbarResponsive" 
+        aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="Main.html">Home
+                <span class="sr-only">(current)</span>
+              </a>
+            </li>
+            
+            <li class="nav-item">
+              <a class="nav-link" href="join.html">회원가입</a> <!-- 로그인 시, 마이페이지 -->
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="login.html">로그인</a> <!-- 로그인 시, 로그아웃 -->
+            </li>
+            <!-- <li class="nav-item">
+              <a class="nav-link" href="#"></a>
+            </li> -->
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Content -->
+    <!-- <div class="container">
+      <h1 class="mt-5">Logo Nav by Start Bootstrap</h1>
+      <p>The logo in the navbar is now a default Bootstrap feature in Bootstrap 4! 
+      Make sure to set the width and height of the logo within the HTML. 
+      For best results, it's recommended that you use an SVG image as your logo.</p>
+    </div> -->
+    <!-- /.container -->
+    
+    <!-- sidebar -->
+        <div id="wrapper" style="margin-top : 35px;">
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand">
+                    <a href="Main.html">
+                        메인화면
+                    </a>
+                </li>
+                <li>
+                    <a href="modify.html">마이페이지</a>
+                </li>
+                <li>
+                    <a href="board_free.html">일반게시판</a>
+                </li>
+                <li>
+                    <a href="board_share.html">책게시판</a>
+                </li>
+                <li>
+                    <a href="searchbook.html">도서검색</a>
+                </li>
+                <li>
+                    <a href="popular_book.html">인기도서</a>
+                </li>
+                <li>
+                    <a href="instructional_page.html">소개페이지</a>
+                </li>
+            </ul>
+        </div>
+        <!-- /#sidebar-wrapper -->
+
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+            <div class="container-fluid">
+                <a href="#menu-toggle" class="btn btn-secondary" id="menu-toggle">menu</a>
+            </div>
+        </div>
+        <!-- /#page-content-wrapper -->
+
+    </div>
+
+
+<!-- 인기도서!!!!! -->
+
+<form>
+	
+	<div id="wrap" class="panel panel-primary">
+	<div id="tab">
+			<!-- 사용자가 클릭하는 Tab들 -->
+			<div class="book_icon"><i class="fa fa-book"></i></div>
+			<h2 id="write">인기대출목록</h2>
+			<ul class ="tab_color" >
+				<li class="col"><a  href="#t1" onclick="test('tb1')"><span  class="taba_color t_selected" id="tb1">지역</span></a></li> <!-- t1이라는 아이디로 가겠다. -->
+				<li class="col"><a  href="#t2" onclick="test('tb2')"><span class="taba_color " id="tb2">연령</span></a></li>
+				<li class="col"><a  href="#t3" onclick="test('tb3')"><span  class="taba_color " id="tb3">성별</span></a></li>
+			</ul>
+			
+
+		<!-- -------------------------------------------------- -->
+
+		<div id="t1">
+		<div class="region_div">
+			<ul id="menu">
+				<li class="region" onclick="prev" id=r1><a href="" > <span class="region_a">◀</span></a></li>
+				<li class="region"><a href=""> <span class="region_a total selected">전국</span></a></li>
+				<li class="region"><a href=""> <span class="region_a seoul">서울</span></a></li>
+				<li class="region"><a href=""> <span class="region_a busan">부산</span></a></li>
+				<li class="region"><a href=""> <span class="region_a daegu">대구</span></a></li>
+				<li class="region"><a href=""> <span class="region_a incheon">인천</span></a></li>
+				<li class="region"><a href=""> <span class="region_a gwangju">광주</span></a></li>
+				<li class="region"><a href=""> <span class="region_a daejeon">대전</span></a></li>
+				<li class="region" style="display: none"><a href=""> <span class="region_a ulsan">울산</span></a></li>
+				<li class="region" style="display: none"><a href=""> <span class="region_a sejong">세종</span></a></li>
+				<li class="region" style="display: none"><a href=""> <span class="region_a gyeonggi">경기</span></a></li>
+				<li class="region" style="display: none"><a href=""> <span class="region_a gangwon">강원</span></a></li>
+				<li class="region" style="display: none"><a href=""> <span class="region_a chungcheong">충북</span></a></li>
+				<li class="region" style="display: none"><a href=""> <span class="region_a chungnam">충남</span></a></li>
+				<li class="region" style="display: none"><a href=""> <span class="region_a jeolanam">전남</span></a></li>
+				<li class="region" style="display: none"><a href=""> <span class="region_a jeollabuk">전북</span></a></li>
+				<li class="region" onclick="next"><a href=""> <span class="region_a">▶</span></a></li>
+			</ul>
+		</div>
+			<div id=tabImg>
+				<ul class="bookListSize">
+					<li class="bookList">
+					
+						<a href="#" class="imageStyle"> 
+							<label>1</label>
+							<img src="../images/to1.PNG" class="imageSize"/>
+							<span class=" fontStyle">골든아워 </span>
+						</a> 
+					</li>
+					
+					<li class="bookList">
+						<a href="#" class="imageStyle">
+							<label>2</label>
+							<img src="../images/to2.PNG" class="imageSize"/>
+							<span class="fontStyle">12가지 인생의 법칙</span>
+						</a>
+					</li>				
+				
+					<li class="bookList">
+						<a href="#" class="imageStyle">
+							<label>3</label>
+							<img src="../images/to3.PNG" class="imageSize"/>
+							<span class="fontStyle">골든아워2</span>
+						</a>
+					</li>
+					
+					<li class="bookList">
+						<a href="#" class="imageStyle">
+							<label>4</label>
+							<img src="../images/to4.PNG" class="imageSize"/>
+							<span class="fontStyle">나는 그것에 대해 아주 오랫동안 생각해</span>
+						</a>
+					</li>
+					
+					<li class="bookList">
+						<a href="#" class="imageStyle">
+							<label>5</label>
+							<img src="../images/to5.PNG" class="imageSize"/>
+							<span class="fontStyle">죽고 싶지만 떡볶이는 먹고싶어: 백세희</span>
+						</a>
+					</li>
+					
+					<li class="bookList">
+						<a href="#" class="imageStyle">
+							<label>6</label>
+							<img src="../images/to1.PNG" class="imageSize"/>
+							<span class="fontStyle">골든아워 :이국종 에세이</span>
+						</a>
+					</li>
+					
+					<li class="bookList">
+						<a href="#" class="imageStyle">
+							<label>7</label>
+							<img src="../images/to2.PNG" class="imageSize"/>
+							<span class="fontStyle">12가지 인생의 법칙: 조던B피터슨</span>
+						</a>
+					</li>
+					
+					<li class="bookList">
+						<a href="#" class="imageStyle">
+							<label>8</label>
+							<img src="../images/to3.PNG" class="imageSize"/>
+							<span class="fontStyle">골든아워2:이국종 에세이</span>
+						</a>
+					</li>
+					
+					<li class="bookList">
+						<a href="#" class="imageStyle">
+							<label>9</label>
+							<img src="../images/to4.PNG" class="imageSize"/>
+							<span class="fontStyle">나는 그것에 대해 아주 오랫동안 생각해: 김금희</span>
+						</a>
+					</li>
+					
+					<li class="bookList">
+						<a href="#" class="imageStyle">
+							<label>10</label>
+							<img src="../images/to5.PNG" class="imageSize"/>
+							<span class="fontStyle">죽고 싶지만 떡볶이는 먹고싶어: 백세희</span>
+						</a>
+					</li>
+					
+					<li class="bookList">
+						<a href="#" class="imageStyle">
+							<label>11</label>
+							<img src="../images/to1.PNG" class="imageSize"/>
+							<span class="fontStyle">골든아워 :이국종 에세이</span>
+						</a>
+					</li>
+					
+					<li class="bookList">
+						<a href="#" class="imageStyle">
+							<label>12</label>
+							<img src="../images/to2.PNG" class="imageSize"/>
+							<span class="fontStyle">12가지 인생의 법칙: 조던B피터슨</span>
+						</a>
+					</li>
+					
+					<li class="end"></li> 
+					</ul>
+					</div> <!-- 이미지가 들어간 탭사이즈 -->
+					
+					<div><!-- 숫자 div -->
+						<ul class="pagination justify-content-center" style="margin-top:60px;">
+					        <li class="page-item">
+					          <a class="page-link" href="#" aria-label="Previous">
+					            <span aria-hidden="true">«</span>
+					            <span class="sr-only">Previous</span>
+					          </a>
+					        </li>
+					        <li class="page-item">
+					          <a class="page-link" href="#">1</a>
+					        </li>
+					        <li class="page-item">
+					          <a class="page-link" href="#">2</a>
+					        </li>
+					        <li class="page-item">
+					          <a class="page-link" href="#">3</a>
+					        </li>
+					        <li class="page-item">
+					          <a class="page-link" href="#" aria-label="Next">
+					            <span aria-hidden="true">»</span>
+					            <span class="sr-only">Next</span>
+					          </a>
+					        </li>
+					      </ul><!-- 숫자끝 -->
+					</div><!-- 숫자 div -->
+					</div>
+	<!-- 첫번째 탭 끝!!!! -->
+	
+			<div id="t2">
+			
+			<div class="region_div">
+			<ul id="menu">
+				<li class="region" onclick="prev" id=r1><a href="" > <span class="region_a">◀</span></a></li>
+				<li class="region"><a href=""> <span class="region_a total selected">전체</span></a></li>
+				<li class="region"><a href=""> <span class="region_a seoul">영유아</span></a></li>
+				<li class="region"><a href=""> <span class="region_a busan">유아</span></a></li>
+				<li class="region"><a href=""> <span class="region_a daegu">초등</span></a></li>
+				<li class="region"><a href=""> <span class="region_a incheon">청소년</span></a></li>
+				<li class="region"><a href=""> <span class="region_a gwangju">20대</span></a></li>
+				<li class="region"><a href=""> <span class="region_a daejeon">30대</span></a></li>
+				<li class="region" style="display: none"><a href=""> <span class="region_a ulsan">울산</span></a></li>
+				<li class="region" style="display: none"><a href=""> <span class="region_a sejong">세종</span></a></li>
+				<li class="region" style="display: none"><a href=""> <span class="region_a gyeonggi">경기</span></a></li>
+				<li class="region" style="display: none"><a href=""> <span class="region_a gangwon">강원</span></a></li>
+				<li class="region" style="display: none"><a href=""> <span class="region_a chungcheong">충북</span></a></li>
+				<li class="region" style="display: none"><a href=""> <span class="region_a chungnam">충남</span></a></li>
+				<li class="region" style="display: none"><a href=""> <span class="region_a jeolanam">전남</span></a></li>
+				<li class="region" style="display: none"><a href=""> <span class="region_a jeollabuk">전북</span></a></li>
+				<li class="region" onclick="next"><a href=""> <span class="region_a">▶</span></a></li>
+			</ul>
+		</div>
+			<div id=tabImg>
+				<ul class="bookListSize">
+					<li class="bookList">
+					
+						<a href="#" class="imageStyle"> 
+							<label>1</label>
+							<img src="../images/to1.PNG" class="imageSize"/>
+							<span class=" fontStyle">골든아워 </span>
+						</a> 
+					</li>
+					
+					<li class="bookList">
+						<a href="#" class="imageStyle">
+							<label>2</label>
+							<img src="../images/to2.PNG" class="imageSize"/>
+							<span class="fontStyle">12가지 인생의 법칙</span>
+						</a>
+					</li>				
+				
+					<li class="bookList">
+						<a href="#" class="imageStyle">
+							<label>3</label>
+							<img src="../images/to3.PNG" class="imageSize"/>
+							<span class="fontStyle">골든아워2</span>
+						</a>
+					</li>
+					
+					<li class="bookList">
+						<a href="#" class="imageStyle">
+							<label>4</label>
+							<img src="../images/to4.PNG" class="imageSize"/>
+							<span class="fontStyle">나는 그것에 대해 아주 오랫동안 생각해</span>
+						</a>
+					</li>
+					
+					<li class="bookList">
+						<a href="#" class="imageStyle">
+							<label>5</label>
+							<img src="../images/to5.PNG" class="imageSize"/>
+							<span class="fontStyle">죽고 싶지만 떡볶이는 먹고싶어: 백세희</span>
+						</a>
+					</li>
+					
+					<li class="bookList">
+						<a href="#" class="imageStyle">
+							<label>6</label>
+							<img src="../images/to1.PNG" class="imageSize"/>
+							<span class="fontStyle">골든아워 :이국종 에세이</span>
+						</a>
+					</li>
+					
+					<li class="bookList">
+						<a href="#" class="imageStyle">
+							<label>7</label>
+							<img src="../images/to2.PNG" class="imageSize"/>
+							<span class="fontStyle">12가지 인생의 법칙: 조던B피터슨</span>
+						</a>
+					</li>
+					
+					<li class="bookList">
+						<a href="#" class="imageStyle">
+							<label>8</label>
+							<img src="../images/to3.PNG" class="imageSize"/>
+							<span class="fontStyle">골든아워2:이국종 에세이</span>
+						</a>
+					</li>
+					
+					<li class="bookList">
+						<a href="#" class="imageStyle">
+							<label>9</label>
+							<img src="../images/to4.PNG" class="imageSize"/>
+							<span class="fontStyle">나는 그것에 대해 아주 오랫동안 생각해: 김금희</span>
+						</a>
+					</li>
+					
+					<li class="bookList">
+						<a href="#" class="imageStyle">
+							<label>10</label>
+							<img src="../images/to5.PNG" class="imageSize"/>
+							<span class="fontStyle">죽고 싶지만 떡볶이는 먹고싶어: 백세희</span>
+						</a>
+					</li>
+					
+					<li class="bookList">
+						<a href="#" class="imageStyle">
+							<label>11</label>
+							<img src="../images/to1.PNG" class="imageSize"/>
+							<span class="fontStyle">골든아워 :이국종 에세이</span>
+						</a>
+					</li>
+					
+					<li class="bookList">
+						<a href="#" class="imageStyle">
+							<label>12</label>
+							<img src="../images/to2.PNG" class="imageSize"/>
+							<span class="fontStyle">12가지 인생의 법칙: 조던B피터슨</span>
+						</a>
+					</li>
+					
+					<li class="end"></li> 
+					</ul>
+					</div> <!-- 이미지가 들어간 탭사이즈 -->
+					
+					<div >
+						<ul class="pagination justify-content-center" style="margin-top:60px;>
+					        <li class="page-item">
+					          <a class="page-link" href="#" aria-label="Previous">
+					            <span aria-hidden="true">«</span>
+					            <span class="sr-only">Previous</span>
+					          </a>
+					        </li>
+					        <li class="page-item">
+					          <a class="page-link" href="#">1</a>
+					        </li>
+					        <li class="page-item">
+					          <a class="page-link" href="#">2</a>
+					        </li>
+					        <li class="page-item">
+					          <a class="page-link" href="#">3</a>
+					        </li>
+					        <li class="page-item">
+					          <a class="page-link" href="#" aria-label="Next">
+					            <span aria-hidden="true">»</span>
+					            <span class="sr-only">Next</span>
+					          </a>
+					        </li>
+					      </ul><!-- 숫자끝 -->
+					</div>
+			</div>
+			
+			
+			<div id="t3">
+			<div class="region_div">
+			<ul id="menu">
+				<li class="region" onclick="prev" id=r1><a href="" > <span class="region_a">◀</span></a></li>
+				<li class="region"><a href=""> <span class="region_a total selected">전체</span></a></li>
+				<li class="region"><a href=""> <span class="region_a seoul">영유아(남)</span></a></li>
+				<li class="region"><a href=""> <span class="region_a busan">영유아(여)</span></a></li>
+				<li class="region"><a href=""> <span class="region_a daegu">유아(남)</span></a></li>
+				<li class="region"><a href=""> <span class="region_a incheon">유아(여)</span></a></li>
+				<li class="region"><a href=""> <span class="region_a gwangju">초등(남)</span></a></li>
+				<li class="region"><a href=""> <span class="region_a daejeon">초등(여)</span></a></li>
+				<li class="region" style="display: none"><a href=""> <span class="region_a ulsan">울산</span></a></li>
+				<li class="region" style="display: none"><a href=""> <span class="region_a sejong">세종</span></a></li>
+				<li class="region" style="display: none"><a href=""> <span class="region_a gyeonggi">경기</span></a></li>
+				<li class="region" style="display: none"><a href=""> <span class="region_a gangwon">강원</span></a></li>
+				<li class="region" style="display: none"><a href=""> <span class="region_a chungcheong">충북</span></a></li>
+				<li class="region" style="display: none"><a href=""> <span class="region_a chungnam">충남</span></a></li>
+				<li class="region" style="display: none"><a href=""> <span class="region_a jeolanam">전남</span></a></li>
+				<li class="region" style="display: none"><a href=""> <span class="region_a jeollabuk">전북</span></a></li>
+				<li class="region" onclick="next"><a href=""> <span class="region_a">▶</span></a></li>
+			</ul>
+		</div>
+			<div id=tabImg>
+				<ul class="bookListSize">
+					<li class="bookList">
+					
+						<a href="#" class="imageStyle"> 
+							
+							<img src="../images/to1.PNG" class="imageSize"/>
+							<span class=" fontStyle">골든아워 </span>
+						</a> 
+					</li>
+					
+					<li class="bookList">
+						<a href="#" class="imageStyle">
+							<img src="../images/to2.PNG" class="imageSize"/>
+							<span class="fontStyle">12가지 인생의 법칙</span>
+						</a>
+					</li>				
+				
+					<li class="bookList">
+						<a href="#" class="imageStyle">
+							<img src="../images/to3.PNG" class="imageSize"/>
+							<span class="fontStyle">골든아워2</span>
+						</a>
+					</li>
+					
+					<li class="bookList">
+						<a href="#" class="imageStyle">
+							<img src="../images/to4.PNG" class="imageSize"/>
+							<span class="fontStyle">나는 그것에 대해 아주 오랫동안 생각해</span>
+						</a>
+					</li>
+					
+					<li class="bookList">
+						<a href="#" class="imageStyle">
+							<img src="../images/to5.PNG" class="imageSize"/>
+							<span class="fontStyle">죽고 싶지만 떡볶이는 먹고싶어: 백세희</span>
+						</a>
+					</li>
+					
+					<li class="bookList">
+						<a href="#" class="imageStyle">
+							<img src="../images/to1.PNG" class="imageSize"/>
+							<span class="fontStyle">골든아워 :이국종 에세이</span>
+						</a>
+					</li>
+					
+					<li class="bookList">
+						<a href="#" class="imageStyle">
+							<img src="../images/to2.PNG" class="imageSize"/>
+							<span class="fontStyle">12가지 인생의 법칙: 조던B피터슨</span>
+						</a>
+					</li>
+					
+					<li class="bookList">
+						<a href="#" class="imageStyle">
+							<img src="../images/to3.PNG" class="imageSize"/>
+							<span class="fontStyle">골든아워2:이국종 에세이</span>
+						</a>
+					</li>
+					
+					<li class="bookList">
+						<a href="#" class="imageStyle">
+							<img src="../images/to4.PNG" class="imageSize"/>
+							<span class="fontStyle">나는 그것에 대해 아주 오랫동안 생각해: 김금희</span>
+						</a>
+					</li>
+					
+					<li class="bookList">
+						<a href="#" class="imageStyle">
+							<img src="../images/to5.PNG" class="imageSize"/>
+							<span class="fontStyle">죽고 싶지만 떡볶이는 먹고싶어: 백세희</span>
+						</a>
+					</li>
+					
+					<li class="bookList">
+						<a href="#" class="imageStyle">
+							<img src="../images/to1.PNG" class="imageSize"/>
+							<span class="fontStyle">골든아워 :이국종 에세이</span>
+						</a>
+					</li>
+					
+					<li class="bookList">
+						<a href="#" class="imageStyle">
+							<img src="../images/to2.PNG" class="imageSize"/>
+							<span class="fontStyle">12가지 인생의 법칙: 조던B피터슨</span>
+						</a>
+					</li>
+					
+					<li class="end"></li> 
+					</ul>
+					</div> <!-- 이미지가 들어간 탭사이즈 -->
+					
+						<ul class="pagination justify-content-center"  style="margin-top:60px;>
+					        <li class="page-item">
+					          <a class="page-link" href="#" aria-label="Previous">
+					            <span aria-hidden="true">«</span>
+					            <span class="sr-only">Previous</span>
+					          </a>
+					        </li>
+					        <li class="page-item">
+					          <a class="page-link" href="#">1</a>
+					        </li>
+					        <li class="page-item">
+					          <a class="page-link" href="#">2</a>
+					        </li>
+					        <li class="page-item">
+					          <a class="page-link" href="#">3</a>
+					        </li>
+					        <li class="page-item">
+					          <a class="page-link" href="#" aria-label="Next">
+					            <span aria-hidden="true">»</span>
+					            <span class="sr-only">Next</span>
+					          </a>
+					        </li>
+					      </ul><!-- 숫자끝 -->
+
+			 </div>
+		
+		</div>
+	</div>
+	
+	
+	</form>
+
+	
+
+	    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">Copyright &copy; Your Website 2018</p>
+      </div>
+      <!-- /.container -->
+    </footer>
+    
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="../lib/js/jquery.min.js"></script>
+    <script src="../lib/js/bootstrap.bundle.min.js"></script>
+
+ 
+     
+	
+	
+	
+	<script src="../lib/js_popularBook/js/jquery-3.3.1.min.js"></script>  
+	<script src="../lib/js_popularBook/js/jquery-ui.min.js"></script> <!-- ui는 위의 core가 있어야 움직이므로 두개의 js파일의 순서가 바뀌면 안됨! -->
+	
+	
+	
+	<script type="text/javascript">
+	
+    <!-- Menu Toggle Script -->
+    $("#menu-toggle").hover(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
+    
+    $("#sidebar-wrapper").hover(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    }); 
+	
+		$(function(){
+			//jQuery시작부분!
+			$("#btn1").button();
+			
+			$("#tab").tabs({collapsible: true});
+			$("#tab").css(border)
+
+		});
+		
+		function test(n){
+			
+			$(".tab_color span").css("color","#555");
+			var t = document.getElementById(n);
+			t.style.color = "#6B9900";
+		}
+		
+		
+
+		
+	</script>
+</body>
+</html>

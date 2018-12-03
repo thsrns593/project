@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>게시판 제목을 입력하세요</title>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>project</title>
+
+    <!-- 부트스트랩 sb-admin-2의 폰트 및 아이콘 CSS-->
+    <link href="../lib/css/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+   
+    <!-- jquery ui의 CSS -->
+    <link href="../lib/css/jquery-ui.min.css" rel="stylesheet" type="text/css">
+    
+    <!-- Bootstrap core CSS -->
+    <link href="../lib/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="../lib/css/logo-nav.css" rel="stylesheet">
+	
+	<!-- 메인 CSS -->
+	<link href="../lib/css/common.css" rel="stylesheet">
+	
+	<!-- SideBar CSS -->
+	<link href="../lib/css/simple-sidebar.css" rel="stylesheet">
+	
+	<!-- half-slider CSS -->
+	<link href="../lib/css/half-slider.css" rel="stylesheet">
+	<!--share css -->
+    <style type="text/css">
+    	#page_num_area {
+    		text-align: right;
+    	}
+    	#dataTable tbody a:hover,#dataTable tbody a:visited{
+    		text-decoration: none;
+    	}
+    	#page_num_area {
+    		float: right;
+    	}
+    	#search_area {
+    		margin-top :20px;
+    		float:left;
+    		width : 535px;
+    	}
+    	#search_cate_area{
+    		float: left;
+    	}
+    	#search_word_area{
+    		float:right;
+    	}
+    	#search_cate_area {
+    		display: inline-block;
+    		width : 200px;
+    	}
+    	#search_word_area {
+    		display: inline-block;
+    		width : 300px;
+    	}
+    	#search_word {
+    		display:inline-block;
+    		width:200px;
+    	}
+    	#top_left {
+    		float:left;
+    		padding-bottom:10px;
+    	}
+    	#top_right{
+    		float:right;
+    		padding-bottom:10px;
+    	}
+    	#contents {
+    		width : 1800px;
+    		margin-left: 190px;
+    		height: 500px;
+    	}
+    </style>
+</head>
+<body>
+<!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="Main.html">
+          <!-- <img src="http://placehold.it/300x60?text=Logo" width="150" height="30" alt=""> -->
+        	<h2 id="header_logo">우리 동네 도서관</h2>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" 
+        data-target="#navbarResponsive" aria-controls="navbarResponsive" 
+        aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="Main.html">Home
+                <span class="sr-only">(current)</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="join.html">회원가입</a> <!-- 로그인 시, 마이페이지 -->
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="login.html">로그인</a> <!-- 로그인 시, 로그아웃 -->
+            </li>
+            <!-- <li class="nav-item">
+              <a class="nav-link" href="#"></a>
+            </li> -->
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Content -->
+    <!-- <div class="container">
+      <h1 class="mt-5">Logo Nav by Start Bootstrap</h1>
+      <p>The logo in the navbar is now a default Bootstrap feature in Bootstrap 4! 
+      Make sure to set the width and height of the logo within the HTML. 
+      For best results, it's recommended that you use an SVG image as your logo.</p>
+    </div> -->
+    <!-- /.container -->
+    
+    <!-- sidebar -->
+        <div id="wrapper">
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand">
+                    <a href="Main.html">
+                        메인화면
+                    </a>
+                </li>
+                <li>
+                    <a href="modify.html">마이페이지</a>
+                </li>
+                <li>
+                    <a href="board_free.html">일반게시판</a>
+                </li>
+                <li>
+                    <a href="board_share.html">책게시판</a>
+                </li>
+                <li>
+                    <a href="searchbook.html">도서검색</a>
+                </li>
+                <li>
+                    <a href="popular_book.html">인기도서</a>
+                </li>
+                <li>
+                    <a href="instructional_page.html">소개페이지</a>
+                </li>
+            </ul>
+        </div>
+        <!-- /#sidebar-wrapper -->
+
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+            <div class="container-fluid">
+                <a href="#menu-toggle" class="btn btn-secondary" id="menu-toggle">menu</a>
+            </div>
+        </div>
+        <!-- /#page-content-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+    
+    <!-- half-slider -->
+  <!--       <header>
+      <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner" role="listbox">
+          Slide One - Set the background image for this slide in the line below
+          <div class="carousel-item active" style="background-image: url('http://placehold.it/1900x1080')">
+            <div class="carousel-caption d-none d-md-block">
+              <h3>First Slide</h3>
+              <p>This is a description for the first slide.</p>
+            </div>
+          </div>
+          Slide Two - Set the background image for this slide in the line below
+          <div class="carousel-item" style="background-image: url('http://placehold.it/1900x1080')">
+            <div class="carousel-caption d-none d-md-block">
+              <h3>Second Slide</h3>
+              <p>This is a description for the second slide.</p>
+            </div>
+          </div>
+          Slide Three - Set the background image for this slide in the line below
+          <div class="carousel-item" style="background-image: url('http://placehold.it/1900x1080')">
+            <div class="carousel-caption d-none d-md-block">
+              <h3>Third Slide</h3>
+              <p>This is a description for the third slide.</p>
+            </div>
+          </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+    </header>
+     -->
+    <!-- Page Content -->
+    <!-- <section class="py-5">
+      <div class="container">
+        <h1>Half Slider by Start Bootstrap</h1>
+        <p>The background images for the slider are set directly in the HTML using inline CSS. The rest of the styles for this template are contained within the
+          <code>half-slider.css</code>
+          file.</p>
+      </div>
+    </section> -->
+	<div id="contents">
+		<div class="col-lg-8 col-lg-offset-2">
+			<div class="panel panel-primary">
+				<div class="panel-heading">
+					<h3>일반게시판</h3>
+				</div>
+				<div class="panel-body">
+					<div id="top_side">
+						<div id="top_left">
+							<select class="form-control">
+								<option>전체</option>
+								<option>공지</option>
+								<option>잡담</option>
+								<option>질문</option>
+							</select>
+						</div>
+						<div id="top_right"><input type="button" class="btn btn-default" value="글쓰기" onclick="javascript:location.href='text_write.html'"></div>
+					</div>
+					<table class="table table-striped table-bordered table-hover" id="dataTable">
+						<colgroup>
+							<col width="5%">
+							<col width="5%">
+							<col width="40%">
+							<col width="10%">
+							<col width="10%">
+							<col width="8%">
+							<col width="6%">
+							<col width="6%">
+						</colgroup>
+						<tbody>
+							<tr>
+								<th>번호</th>
+								<th>분류</th>
+								<th>제목</th>
+								<th>글쓴이</th>
+								<th>등록일</th>
+								<th>조회수</th>
+								<th>추천</th>
+								<th>비추</th>
+							</tr>
+							<tr>
+								<td>1</td>
+								<td>공지</td>
+								<td><a href="#">공지입니다</a></td>
+								<td>관리자</td>
+								<td>11/7</td>
+								<td>510</td>
+								<td>20</td>
+								<td>3</td>
+							</tr>
+							<tr>
+								<td>2</td>
+								<td>잡담</td>
+								<td><a href="#">아무글이나 쓰는곳</a></td>
+								<td>사용자</td>
+								<td>11/7</td>
+								<td>13</td>
+								<td>3</td>
+								<td>10</td>
+							</tr>
+							<tr>
+								<td>3</td>
+								<td>질문</td>
+								<td><a href="#">질문해도 되나요?</a></td>
+								<td>다른사용자</td>
+								<td>11/8</td>
+								<td>0</td>
+								<td>0</td>
+								<td>0</td>
+							</tr>
+						</tbody>
+					</table>
+					<div class="col-lg-6" id="search_area">
+						<div class ="form-group" id="search_cate_area">
+							<select  id="search_cate" class="form-control">
+		                        <option>글제목</option>
+		                        <option>글내용</option>
+		                        <option>글제목+글내용</option>
+		                        <option>글쓴이</option>
+	                        </select>
+                        </div>
+                        <div class ="form-group input-group" id="search_word_area">
+                        	<input id="search_word" class="form-control" name="search_word">
+                        	<span class="input-group-btn" id="search_btn">
+							<button class="btn btn-default" type="button"><i class="fa fa-search"></i></button>
+							</span>
+						</div>
+                    </div>
+					<div class="dataTables_paginate paging_simple_numbers" id="page_num_area">
+						<ul class="pagination">
+							<li class="paginate_button previous disabled" aria-controls="" tabindex="0" id="previous_btn"><a href="#">이전</a></li>
+							<li class="paginate_button active" aria-controls="" tabindex="0"><a href="#">1</a></li>
+							<li class="paginate_button" aria-controls="" tabindex="1"><a href="#">2</a></li>
+							<li class="paginate_button" aria-controls="" tabindex="2"><a href="#">3</a></li>
+							<li class="paginate_button" aria-controls="" tabindex="3"><a href="#">4</a></li>
+							<li class="paginate_button" aria-controls="" tabindex="4"><a href="#">5</a></li>
+							<li class="pagiante_button next" aria-controls="" tabindex="5" id="next_btn"><a href="#">다음</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Footer -->
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">Copyright &copy; Your Website 2018</p>
+      </div>
+      <!-- /.container -->
+    </footer>
+    
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="../lib/js/jquery.min.js"></script>
+    <script src="../lib/js/bootstrap.bundle.min.js"></script>
+
+	    <!-- Menu Toggle Script -->
+    <script>
+    $("#menu-toggle").hover(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
+    
+    $("#sidebar-wrapper").hover(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });  
+     
+    
+    </script>
+</body>
+</html>

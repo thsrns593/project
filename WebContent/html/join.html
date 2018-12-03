@@ -40,9 +40,9 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
       <div class="container">
-        <a class="navbar-brand" href="main.html">
+        <a class="navbar-brand" href="Main.html">
           <!-- <img src="http://placehold.it/300x60?text=Logo" width="150" height="30" alt=""> -->
-        	<h2 id="header_logo">Library...</h2>
+        	<h2 id="header_logo">우리 동네 도서관</h2>
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" 
         data-target="#navbarResponsive" aria-controls="navbarResponsive" 
@@ -52,15 +52,15 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="">Home
+              <a class="nav-link" href="Main.html">Home
                 <span class="sr-only">(current)</span>
               </a>
             </li>
+            <!-- <li class="nav-item">
+              <a class="nav-link" href="join.html">회원가입</a> 로그인 시, 마이페이지
+            </li> -->
             <li class="nav-item">
-              <a class="nav-link" href="">회원가입</a> <!-- 로그인 시, 마이페이지 -->
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="">로그인</a> <!-- 로그인 시, 로그아웃 -->
+              <a class="nav-link" href="login.html">로그인</a> <!-- 로그인 시, 로그아웃 -->
             </li>
             <!-- <li class="nav-item">
               <a class="nav-link" href="#"></a>
@@ -84,24 +84,27 @@
         <div id="sidebar-wrapper">
             <ul class="sidebar-nav">
                 <li class="sidebar-brand">
-                    <a href="#">
-                        Side menu
+                    <a href="Main.html">
+                        메인화면
                     </a>
                 </li>
                 <li>
-                    <a href="">마이페이지</a>
+                    <a href="modify.html">마이페이지</a>
                 </li>
                 <li>
-                    <a href="">게시판</a>
+                    <a href="board_free.html">일반게시판</a>
                 </li>
                 <li>
-                    <a href="">도서검색</a>
+                    <a href="board_share.html">책게시판</a>
                 </li>
                 <li>
-                    <a href="">인기도서</a>
+                    <a href="searchbook.html">도서검색</a>
                 </li>
                 <li>
-                    <a href="">소개페이지</a>
+                    <a href="popular_book.html">인기도서</a>
+                </li>
+                <li>
+                    <a href="instructional_page.html">소개페이지</a>
                 </li>
             </ul>
         </div>
@@ -210,9 +213,9 @@
                 <span class="input-group-btn">
                   <input id="r_pw" name="r_pw" type="password" class="form-control" placeholder="re-enter password">
                 </span>
-                <span class="input-group-btn">
+                <!-- <span class="input-group-btn">
                   <button class="btn btn-secondary" type="button">비밀번호 확인</button>
-                </span>
+                </span> -->
               </div>
               
               <div class="input-group">
@@ -238,6 +241,9 @@
                 <span class="input-group-btn">
                   <input id="email" name="email" type="text" class="form-control" placeholder="User email">
                 </span>
+                <span class="input-group-btn">
+                  <button class="btn btn-secondary" type="button">이메일 인증</button>
+                </span>
               </div>
         
               <div class="input-group"> 
@@ -260,10 +266,10 @@
  			  <div class="input-group">
  			  	<span class="input-group-btn btcenter">
  			  		<br/>
-					<button type="button" class="btn btn-secondary">저 장
+					<button type="button" class="btn btn-secondary" onclick="javascript:location.href='Main.html'">저 장
 					</button>
 							&nbsp;&nbsp;&nbsp;
-					<button type="button" class="btn btn-secondary">취 소
+					<button type="button" class="btn btn-secondary" onclick="javascript:location.href='Main.html'">취 소
 					</button>
 				</span>
 			  </div>	
